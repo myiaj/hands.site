@@ -1,0 +1,114 @@
+@import './variables';
+
+.container{
+    max-width: $MaxWidth;
+    margin: 0 auto;
+}
+
+@media(min-width: 768px) and (max-width: 1024px){
+    .container{
+        padding: 0 60px;
+    }
+}
+
+@media(max-width: 767px){
+    .container{
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+//內文區塊
+.content-row{
+    display: flex;
+    width: 100%;
+    margin-left:  $content-row-margin-x;
+    margin-right: $content-row-margin-x;
+}
+
+.column-huge, .column-min, .column{
+    padding-left:  $column-padding-x;
+    padding-right: $column-padding-x;
+}
+
+// 1+ 2 區塊欄位
+.column-huge{
+    width: 70%;
+}
+
+.column-min{
+    width: 30%;
+}
+
+// 三欄式 
+.column{
+    width: 33.33%;
+}
+
+@media (max-width: 767px){
+    .column-half{
+    width: 100%;
+}
+
+// 三欄式 
+.column{
+    width: 100%;
+}
+}
+
+//navbar section
+.top-line{
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, $secondary 35.45%, $secondary 62.71%);
+}
+
+
+
+//main
+.main-tile-contain{
+    display: flex;
+    width: 100%;
+}
+
+.main-tile{
+    width: 50%;
+}
+
+
+//影音磚塊的撥放鍵
+.play-btn{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.play-btn-primary{
+    background-color: $primary;
+}
+
+// .article-tag{
+//     font-size: $font-sm;
+//     line-height: $line-height-default;
+//     padding: 0 20px;
+//     border: 1px solid $border-light;
+// }
+
+.gradient-bg{
+    background: linear-gradient(90deg, $primary 17.42%, $secondary 81.01%);
+}
+
+.top-pagination{
+    display: inline-flex;
+}
+
+.top-pagination li::after{
+    content: '>';
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.top-pagination li:last-child::after{
+    content: '';
+}

@@ -1,0 +1,31 @@
+@import './reset';
+@import './variables';
+@import './layout';
+@import './utilities';
+
+// 正文
+
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap);
+
+
+$main-font-family: 'earlyaccess';
+$sub-font-family : 'Montserrat';
+
+body{
+    background-color: $main-bg-color;
+    font-family: main-font-family;
+}
+
+//header
+
+.hero{
+    width: 100%;
+    padding-top: $header-text-padding-y;
+    padding-bottom: $header-text-padding-y;
+    background-image: url("../../assets/images/blog-banner.png");
+}
+
+.hero > .hero-text {
+    text-align: center;
+}
