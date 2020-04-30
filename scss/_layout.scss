@@ -1,4 +1,28 @@
-@import './variables';
+
+// 變數
+//頁面最大寬度
+$MaxWidth               : 1100px;
+
+//文章區塊的寬度
+
+$width-100              : 100%;
+$threeCol-tile-w        : 33.33%;
+$twoCol-main-w          : 68%;
+$twoCol-aside-w         : 32%;
+
+//區塊的padding, margin
+$header-text-padding-y  : 144px;
+$column-padding-x       : 15px;
+$content-row-margin-x   : -15px; //消除區塊內的單篇文章欄位 padding
+
+$section-margin-y       : 70px; //各個大區塊的上下邊界
+$border-text-margin-y   : 65px;
+$heading-margin-y       : 50px; //報導標題
+$in-body-margin-y       : 30px; //內文局部區塊間距調整
+
+
+
+//
 
 .container{
     max-width: $MaxWidth;
@@ -13,102 +37,37 @@
 
 @media(max-width: 767px){
     .container{
-        width: 100%;
-        padding: 0 15px;
+        width: $width-100;
+        padding: 0 $column-padding-x;
     }
 }
 
-//內文區塊
+/* n欄式 */
 .content-row{
     display: flex;
-    width: 100%;
-    margin-left:  $content-row-margin-x;
-    margin-right: $content-row-margin-x;
 }
 
-.column-huge, .column-min, .column{
+.threeCol-tile{
+    width: $threeCol-tile-w;
     padding-left:  $column-padding-x;
     padding-right: $column-padding-x;
 }
 
-// 1+ 2 區塊欄位
-.column-huge{
-    width: 70%;
+.twoCol-main{
+    width: $twoCol-main-w;
 }
 
-.column-min{
-    width: 30%;
-}
-
-// 三欄式 
-.column{
-    width: 33.33%;
+.twoCol-aside{
+    width: $twoCol-aside-w;
 }
 
 @media (max-width: 767px){
-    .column-half{
-    width: 100%;
+    .content-row, .twoCol-row{
+        display: block;
+    }
+    .threeCol-tile, .twoCol-main, .twoCol-aside{
+        width: 100%;
+    }
 }
 
-// 三欄式 
-.column{
-    width: 100%;
-}
-}
-
-//navbar section
-.top-line{
-    width: 100%;
-    height: 10px;
-    background: linear-gradient(90deg, $secondary 35.45%, $secondary 62.71%);
-}
-
-
-
-//main
-.main-tile-contain{
-    display: flex;
-    width: 100%;
-}
-
-.main-tile{
-    width: 50%;
-}
-
-
-//影音磚塊的撥放鍵
-.play-btn{
-    display: block;
-    width: 40px;
-    height: 40px;
-}
-
-.play-btn-primary{
-    background-color: $primary;
-}
-
-// .article-tag{
-//     font-size: $font-sm;
-//     line-height: $line-height-default;
-//     padding: 0 20px;
-//     border: 1px solid $border-light;
-// }
-
-.gradient-bg{
-    background: linear-gradient(90deg, $primary 17.42%, $secondary 81.01%);
-}
-
-.top-pagination{
-    display: inline-flex;
-}
-
-.top-pagination li::after{
-    content: '>';
-    display: inline-block;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-.top-pagination li:last-child::after{
-    content: '';
-}
+// 文章磚

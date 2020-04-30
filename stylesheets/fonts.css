@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 50px;
+  letter-spacing: 0.02em;
+  color: #343434;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 38px;
+  line-height: 45px;
+  letter-spacing: 0.02em;
+  color: #E84228;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 0.02em;
+  color: #343434;
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 28px;
+  }
+}
+
+h4 {
+  font-style: 32px;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 46px;
+  letter-spacing: 0.02em;
+  color: #E84228;
+}
+
+h5 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: 0.02em;
+  color: #343434;
+}
+
+@media (max-width: 768px) {
+  h5 {
+    font-size: 22px;
+  }
+}
+
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #343434;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 1.5;
+}
+/*# sourceMappingURL=fonts.css.map */
