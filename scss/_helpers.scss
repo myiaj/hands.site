@@ -2,19 +2,6 @@
 .flex{
     display: flex;
 }
-
-.flex-column{
-    flex-direction: column;
-}
-
-.flex-center{
-    justify-content: center;
-}
-
-.flex-row-end{
-    justify-content: end;
-}
-
 //text align 系列
 .text-center{
     text-align: center;
@@ -23,12 +10,6 @@
     text-align: end;
 }
 
-
-//調整間距
-.area-margin-y{
-    margin-top   : $section-margin-y;
-    margin-bottom: $section-margin-y;
-}
 
 .img-cover{
     width: 100%;
@@ -48,8 +29,6 @@
 
 /* 馬克筆效果 */ 
 .heading-marker{
-    padding-left: $font-base-size;
-    
     & > span{
         display: inline-block;
     }
@@ -84,6 +63,22 @@
     }
 }
 
+
+.text-tag{
+        display: flex;
+        width: 75%;
+        margin-right: auto;
+
+    & span {
+        color: $dark;
+        display: block;
+        margin: 6px 10px 6px 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid $light;
+    }
+}
+
 /* 多項目中間的 "/"  or ">" */
 .list-divider{
     display: inline-flex;
@@ -110,6 +105,10 @@
     border-bottom: 1px solid;
 }
 
+.border-dark{
+    border-color: $dark;
+}
+
 .border-primary{
     border-color: $primary;
 }
@@ -121,9 +120,14 @@
 
 /* object fit 圖片 */
 .object-fit{
+    width: 100%;
     object-fit: cover;
     object-position: center center;
 }
 
-
-
+// 響應式
+@media (max-width: 767px){
+    .d-mobile-none{
+        display: none;   
+    }
+}

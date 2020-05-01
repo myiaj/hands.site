@@ -3,13 +3,12 @@
 @import './fonts';
 @import './layout';
 @import './button';
-@import './utilities';
+@import './helpers';
 
 
 
 
 $hero-height     : 500px;
-$report-main-w   : 730px; //max-width, 兩欄式架構, 因為圖片 w730px 才設定在這個寬度
 
 
 
@@ -18,6 +17,7 @@ $section-margin-y       : 70px; //各個大區塊的上下邊界
 $border-text-margin-y   : 65px;
 $heading-margin-y       : 50px; //報導標題
 $in-body-margin-y       : 30px; //內文局部區塊間距調整
+$page-bottom-margin-y   : 100px;
 
 // 正文
 *{
@@ -32,6 +32,10 @@ body{
 }
 
 //header
+.top-pagination{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .hero{
     width: 100%;
@@ -44,6 +48,22 @@ body{
     text-align: center;
 }
 
+.page-article-main{
+    margin-top: $section-margin-y;
+    margin-bottom: $section-margin-y;
+
+    & .zh-en-heading{
+        line-height: 52px;
+    }
+}
+
+@media (max-width: 767px){
+    .page-article-main{
+        margin-top: $in-body-margin-y;
+        margin-bottom: $in-body-margin-y;
+    }
+}
+
 //雙欄
 
 .twoCol-aside{
@@ -52,25 +72,23 @@ body{
 
 
 //單篇報導
+
+/* 報導資訊欄*/
 .report{
     & .twoCol-main{
         padding-right: 30px;
-    }
-    @media(max-width: 767px){
-    & .twoCol-main{
-        padding-right: 0px;
-    }
-    }
-    & .twoCol-top .report-category{
-        color: $secondary;
-        padding-top: $border-text-margin-y;
-        padding-bottom: $border-text-margin-y;
-    } 
+        }
+    
+        @media(max-width: 767px){
+            & .twoCol-main{
+                padding-right: 0px;
+            }
+        }
 
     & .twoCol-top {
-        margin-top: $heading-margin-y;
         margin-bottom: $heading-margin-y;
     }
+
     & .heading-marker .main::before{
         background-color: $secondary;
     }
@@ -87,11 +105,40 @@ body{
         background-color: $light;
         padding: 50px 30px;
     }
-    & .report-img {
+}
+
+.report-category{
+    color: $primary;
+    padding-bottom: $border-text-margin-y;
+}
+
+.report-info{
+    display: flex;
+    padding-top: $in-body-margin-y;
+
+    & .text-tag{
+        width: auto;
+    }
+}
+
+.report-makers{
+    display: inline-flex;
+    margin-left: auto;
+
+    & p{
+        color: $dark;
+        padding-left: 8px;
+        
+    }
+}
+
+/* 報導正文 */
+
+
+.report-img {
         display: block;
         width: 100%;
         margin-bottom: $in-body-margin-y;
-    }
 }
 
 .report-text {
@@ -139,6 +186,13 @@ body{
     }
 }
 
+
+/**
+
+側邊欄位
+
+**/
+
 //藝術家、提案者
 
 .artist{
@@ -157,18 +211,20 @@ body{
         width: 120px;
         height: 120px;
         border-radius: 50%;
-    }   
-    & .artist-type{
+    }
+}
+
+.artist-type{
         font-size: $sub-text-size;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    & .artist-type li::after{
+
+    & li::after{
         content: '/';
         padding: 3px;
     }
-    & .artist-type li:last-child::after{
+    & li:last-child::after{
         content: ''
     }
 }
@@ -184,24 +240,7 @@ body{
 }
 
 
-#style-4::-webkit-scrollbar-track
-{
-	box-shadow: 0;
-	background-color: #EDEFF1;
-}
-
-#style-4::-webkit-scrollbar
-{
-	width: 10px;
-	background-color: $light;
-}
-
-#style-4::-webkit-scrollbar-thumb
-{
-	background-color: $light;
-	border: 0;
-}
-
+// 相關專案
 
 
 .related-project-item{
@@ -229,9 +268,83 @@ body{
     }
 }
 
-//頁面次要區塊
+
+/*
+
+####
+
+頁面次要區塊
+
+####
+
+*/
 .page-sub-content{
     & h5{
         color: $dark;
+    }
+}
+
+//文章磚塊
+
+.post-tile{
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    & .video-tag{
+        color: $white;
+        background: $primary;
+    }
+
+    & .post-tile-date{
+        color: $dark;
+    }
+
+    & .video-post-btn::after{
+        border-width: 20px 0 20px 40px;
+        border-color: transparent transparent transparent $primary;
+    }
+}
+
+.post-tile-img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+}
+
+.post-tile-title{
+        font-size: $h6-size;
+        font-weight: bold;
+        color: $dark;
+        margin-top: 20px;
+}
+
+.post-tile-info{
+        display: flex;
+        align-items: center;
+        color: $dark;
+        margin-top: auto;
+}
+
+
+@media (max-width: 767px){
+    .post-tile{
+        height: auto;
+        margin-bottom: 30px;
+    }
+}
+
+.footer-ad{
+    padding-top: $in-body-margin-y;
+    padding-bottom: $in-body-margin-y;
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 767px){
+    .footer-ad{
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }

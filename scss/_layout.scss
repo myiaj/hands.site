@@ -14,7 +14,9 @@ $twoCol-aside-w         : 32%;
 $header-text-padding-y  : 144px;
 $column-padding-x       : 15px;
 $content-row-margin-x   : -15px; //消除區塊內的單篇文章欄位 padding
+$column-mobile-padding-x: 0;
 
+$footer-padding-y       : 80px;
 $section-margin-y       : 70px; //各個大區塊的上下邊界
 $border-text-margin-y   : 65px;
 $heading-margin-y       : 50px; //報導標題
@@ -68,6 +70,105 @@ $in-body-margin-y       : 30px; //內文局部區塊間距調整
     .threeCol-tile, .twoCol-main, .twoCol-aside{
         width: 100%;
     }
+
+    .threeCol-tile{
+        padding-left: $column-mobile-padding-x;
+        padding-right: $column-mobile-padding-x;
+    }
 }
 
-// 文章磚
+// footer
+footer{
+    margin-top: $section-margin-y;
+    background-color: $light;
+
+    & .footer-body{
+        width: 100%;
+        padding-top: $footer-padding-y;
+        padding-bottom: $footer-padding-y;
+        margin-left: $content-row-margin-x;
+        margin-right: $content-row-margin-x;
+        display: flex;
+        justify-content: space-between;
+
+        & > li{
+            width: 15%;
+            padding-left: $column-padding-x;
+            padding-right: $column-padding-x;
+        }
+
+        & .h4{
+            font-weight: bold;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        & .footer-list{
+            font-size: 18px;
+        }
+        
+        & .contact{
+            width: 35%;
+            margin-left: auto;
+        }
+
+        & .contact .zh-en-heading{
+            margin-top: 0;
+        }
+
+        & .social-links{
+            margin-top: 20px;
+            display: flex;
+        }
+
+        & .social-links li img{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+    }
+    & .copy-right{
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: $secondary;
+
+        & p{
+            font-family: $footer-font;
+            color: $white;
+        }
+    }
+}
+
+@media (max-width: 767px){
+    footer{
+        margin-top: 30px;
+
+        & .footer-body{           
+            & .contact{
+            width: 100%;
+            }
+
+            & .contact p{
+                line-height: 2;
+            }
+
+            & .social-links{
+                margin-top: 30px;
+                display: flex;
+        }
+            
+        }
+        
+        & .copy-right{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            
+            & p{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+

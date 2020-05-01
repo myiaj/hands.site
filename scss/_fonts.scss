@@ -1,13 +1,12 @@
 @import './colors';
 @import './mixin';
 // @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap);
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@300&family=Noto+Sans+TC&display=swap');
 
 //字型
 $font-base          : 'Noto Sans TC';
 $eng-font-base      : 'Montserrat';
-
+$footer-font        : 'Comfortaa';
 //顏色
 $font-color-base    :  $black;
 
@@ -94,7 +93,6 @@ h6, .h6{
 // 中英夾雜
 
 .zh-en-heading{
-  line-height: 52px;
   display: inline-flex;
   align-items: center;
   margin-top: $heading-margin-y;

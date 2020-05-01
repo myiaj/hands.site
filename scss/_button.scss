@@ -91,3 +91,27 @@ $button-margin: 5px auto;
   padding: 2px 5px;
   line-height: 1.3em;
 }
+
+
+.video-tag{
+    display: inline-block;
+    margin-right: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.video-post-btn{
+    position: relative;
+    
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        right: 5%;
+        bottom: 10%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+
+    }
+}
