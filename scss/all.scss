@@ -17,6 +17,7 @@ $section-margin-y       : 70px; //各個大區塊的上下邊界
 $border-text-margin-y   : 65px;
 $heading-margin-y       : 50px; //報導標題
 $in-body-margin-y       : 30px; //內文局部區塊間距調整
+$navbar-padding-y       : 20px;
 $page-bottom-margin-y   : 100px;
 
 // 正文
@@ -35,6 +36,116 @@ body{
 .top-pagination{
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $navbar-padding-y 0;
+    background-color: $white;
+    border-bottom: 1px $light solid;
+
+    & > *{
+        flex: 1;
+    }
+
+    & .btn{
+        display: none;
+        background: transparent;
+        text-align: start;
+    }
+    & .btn:hover{
+        border-color: transparent;
+    }
+
+    & .social{
+        display: none;
+    }
+}
+
+#collapse-menu{
+    display: flex;
+    margin-left: auto;
+    justify-content: space-around;
+
+    & li a{
+        font-size: $h6-size;
+        color: $secondary;
+    }
+    
+}
+
+
+@media (max-width: 767px){
+    .header-nav{
+        background: $gradient;
+        position: relative;
+
+        & .btn{
+            display: block;
+            border: none;
+        }   
+    }
+
+    & #collapse-menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: $h1-size + ($navbar-padding-y * 2) + 1px;
+        background: rgba($dark, .96);
+        transition: max-height ease-in-out .3s;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &.show{
+            overflow-y: auto;
+            max-height: 80vh;
+            padding-top: $section-margin-y;
+            padding-bottom: $section-margin-y;
+        }
+
+        & > li{
+            flex: 1;
+
+            & a{
+                display: block;
+                height: 10vh;
+                font-size: $h6-size;
+                color: $white;
+            }
+        }
+
+        & .social{
+            display: flex;
+
+            & li{
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+
+    }
+
+    // .collapse-menu-mobile{
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+    //     width: 100%;
+    //     padding-top: 130px;
+    //     padding-bottom: 100px;
+    //     background: rgba($dark, 0.96);
+    //     position: absolute;
+    //     transition: background-color ease-in-out .3s;
+    // }
+    //     & .link{
+    //         display: block;
+    //         color: $white;
+    //     }
 }
 
 .hero{
@@ -205,7 +316,15 @@ body{
     
     & figure{
         margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
     }
+
+    & h5{
+        line-height: 2;
+        margin-bottom: 10px;
+    }
+
     & figure img{
         display: block;
         width: 120px;

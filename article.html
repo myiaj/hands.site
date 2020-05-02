@@ -10,7 +10,32 @@
 
 <body>
     <div class="top-line"></div>
-    <nav></nav>
+    <nav class="header-nav">
+        <button class="btn" data-collapse><img class="btn-block btn-yellow" src="./assets/images/navbar-hamburger.png"
+                alt="手機、平板的選單按鈕"></button>
+        <div class="nav-brand">
+            <a class="" href="#">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./assets/images/logo.png">
+                    <img class="logo" src="./assets/images/logo-red.png" alt="logo">
+                </picture>
+            </a>
+        </div>
+        <div id="collapse-menu">
+            <li><a class="link" href="#">關於我們</a>
+            </li>
+            <li> <a class="link" href="#">最新消息</a>
+            </li>
+            <li><a class="link" href="#">藝起推推</a>
+            </li>
+            <ul class="social">
+                <li><img src="./assets/images/social- facebook-red.png" alt=""></li>
+                <li><img src="./assets/images/social-instagram-red.png" alt=""></li>
+                <li><img src="./assets/images/social-youtube-red.png" alt=""></li>
+            </ul>
+        </div>
+        <div></div>
+    </nav>
     <section class="container">
         <ul class="top-pagination list-divider">
             <li>首頁</li>
@@ -94,7 +119,7 @@
                     <div class="twoCol-aside">
                         <div class="artist">
                             <div class="artist-top">
-                                <figure class="flex flex-center">
+                                <figure>
                                     <img src="./assets/images/artist.png" alt="">
                                 </figure>
                                 <h5 class="artist-name text-center border-bt border-primary">黃經論 Ｍark</h5>
@@ -258,7 +283,10 @@
     </main>
     <section class="footer-ad">
         <div class="container">
-            <img class="object-fit" src="./assets/images/footer-ad.png" alt="">
+            <picture>
+                <source media="(max-width: 767px)" srcset="./assets/images/footer-ad-mobile.png">
+                <img class="object-fit" src="./assets/images/footer-ad.png" alt="">
+            </picture>
         </div>
     </section>
     <footer>
@@ -311,6 +339,27 @@
 </body>
 
 <script>
+    const collapseMenu = {
+        viewport: document.documentElement.clientWidth,
+        btn: document.querySelector('[data-collapse]'),
+        menu: document.querySelector('#collapse-menu'),
+        ifOpen: false,
+    }
+
+    // console.log(collapseMenu.viewport)
+
+    if (collapseMenu.viewport < 768) {
+        collapseMenu.btn.addEventListener('click', toggleMenu);
+    }
+
+    function toggleMenu() {
+        collapseMenu.ifOpen = !collapseMenu.ifOpen;
+        if (collapseMenu.ifOpen) {
+            collapseMenu.menu.classList.add('show');
+        } else { collapseMenu.menu.classList.remove('show') }
+    }
+
+
     /* 這部分在想可能不會用到，正式上線後，相關專案的部分理當是不會比報導本文還要高... */
     //計算主要欄位的高度[0] - ( 藝術家介紹[1] + 相關專案 [2]) => 控制相關專案的高度，動態呈現 overflow 的效果
     // const twoColEle = [
