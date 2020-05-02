@@ -13,8 +13,8 @@
     <section class="header-nav-bg">
         <div class="container">
             <nav class="header-nav">
-                <button class="btn" data-collapse><img class="btn-block btn-yellow"
-                        src="./assets/images/navbar-hamburger.png" alt="手機、平板的選單按鈕"></button>
+                <button class="btn nav-btn"><img class="btn-block btn-yellow" src="./assets/images/navbar-hamburger.png"
+                        alt="手機、平板的選單按鈕"></button>
                 <div class="nav-brand">
                     <a class="" href="#">
                         <picture>
@@ -345,18 +345,19 @@
 <script>
     const collapseMenu = {
         viewport: document.documentElement.clientWidth,
-        btn: document.querySelector('[data-collapse]'),
+        btn: document.querySelector('.nav-btn'),
         menu: document.querySelector('#collapse-menu'),
         ifOpen: false,
     }
 
     // console.log(collapseMenu.viewport)
 
-    if (collapseMenu.viewport < 768) {
+    if (collapseMenu.viewport <= 768) {
         collapseMenu.btn.addEventListener('click', toggleMenu);
     }
 
     function toggleMenu() {
+        // console.log(collapseMenu.ifOpen)
         collapseMenu.ifOpen = !collapseMenu.ifOpen;
         if (collapseMenu.ifOpen) {
             collapseMenu.menu.classList.add('show');
