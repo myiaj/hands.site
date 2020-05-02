@@ -10,32 +10,36 @@
 
 <body>
     <div class="top-line"></div>
-    <nav class="header-nav">
-        <button class="btn" data-collapse><img class="btn-block btn-yellow" src="./assets/images/navbar-hamburger.png"
-                alt="手機、平板的選單按鈕"></button>
-        <div class="nav-brand">
-            <a class="" href="#">
-                <picture>
-                    <source media="(max-width: 767px)" srcset="./assets/images/logo.png">
-                    <img class="logo" src="./assets/images/logo-red.png" alt="logo">
-                </picture>
-            </a>
+    <section class="header-nav-bg">
+        <div class="container">
+            <nav class="header-nav">
+                <button class="btn" data-collapse><img class="btn-block btn-yellow"
+                        src="./assets/images/navbar-hamburger.png" alt="手機、平板的選單按鈕"></button>
+                <div class="nav-brand">
+                    <a class="" href="#">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="./assets/images/logo.png">
+                            <img class="logo" src="./assets/images/logo-red.png" alt="logo">
+                        </picture>
+                    </a>
+                </div>
+                <div id="collapse-menu">
+                    <li><a class="link" href="#">關於我們</a>
+                    </li>
+                    <li> <a class="link" href="#">最新消息</a>
+                    </li>
+                    <li><a class="link" href="#">藝起推推</a>
+                    </li>
+                    <ul class="social">
+                        <li><img src="./assets/images/social- facebook-red.png" alt=""></li>
+                        <li><img src="./assets/images/social-instagram-red.png" alt=""></li>
+                        <li><img src="./assets/images/social-youtube-red.png" alt=""></li>
+                    </ul>
+                </div>
+                <div></div>
+            </nav>
         </div>
-        <div id="collapse-menu">
-            <li><a class="link" href="#">關於我們</a>
-            </li>
-            <li> <a class="link" href="#">最新消息</a>
-            </li>
-            <li><a class="link" href="#">藝起推推</a>
-            </li>
-            <ul class="social">
-                <li><img src="./assets/images/social- facebook-red.png" alt=""></li>
-                <li><img src="./assets/images/social-instagram-red.png" alt=""></li>
-                <li><img src="./assets/images/social-youtube-red.png" alt=""></li>
-            </ul>
-        </div>
-        <div></div>
-    </nav>
+    </section>
     <section class="container">
         <ul class="top-pagination list-divider">
             <li>首頁</li>
