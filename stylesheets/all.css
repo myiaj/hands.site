@@ -1253,4 +1253,28 @@ body {
     padding-top: 0;
     padding-bottom: 0; } }
 
+
+#topBtn{
+  width: 60px;
+  height: 60px;
+  background-color: #343434;
+  border-radius: 50%;
+
+  position: fixed;
+  right: -100%;
+  bottom: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: right ease-in-out .5s;
+  transition: opacity ease-in-out .3s;
+}
+
+
+#topBtn.show-up{
+  right: 20px;
+  opacity: .8;
+}
 /*# sourceMappingURL=all.css.map */
