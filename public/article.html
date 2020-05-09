@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-tw">
 
 <head>
     <meta charset="zh-tw">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/all.css">
+    <link rel="stylesheet" href="./stylesheets/all.css">
     <title>最新消息 | 推手計劃</title>
 </head>
 
@@ -75,7 +75,7 @@
                 <section class="content-row">
                     <div class="twoCol-main">
                         <article class="report-body">
-                            <blockquote class="preface">
+                            <blockquote class="report-preface">
                                 <p>公益電影《自助旅行》邀您一同品味孤獨、關懷獨居老人。 敬請支持老化議題、關心自己、也想利益他人的您，別讓愛心暫停。 ⇩
                                     往下滑，將讓更多人受惠。⇩</p>
                             </blockquote>
@@ -210,7 +210,7 @@
                                 </div>
                                 <h6 class="post-tile-title">專訪. 你要逃，還是留下來把這裡變好？ --《他們的故事》</h6>
                                 <div class="post-tile-info">
-                                    <p class="tex"><span>人物專訪</span><span>深入訪談</span></p>
+                                    <p class="text-tag"><span>人物專訪</span><span>深入訪談</span></p>
                                     <p class="post-tile-date">2020.02.01</p>
                                 </div>
                             </li>
@@ -220,7 +220,7 @@
                                 </div>
                                 <h6 class="post-tile-title">創作使彼此感受靈魂的溫度</h6>
                                 <div class="post-tile-info">
-                                    <p class="tex"><span>藝文創作</span></p>
+                                    <p class="text-tag"><span>藝文創作</span></p>
                                     <p class="post-tile-date">2020.02.01</p>
                                 </div>
                             </li>
@@ -230,7 +230,7 @@
                                 </div>
                                 <h6 class="post-tile-title">只要誠實面對，搞咱有什麼關係</h6>
                                 <div class="post-tile-info">
-                                    <p class="tex"><span>大話創作</span><span>影音報導</span></p>
+                                    <p class="text-tag"><span>大話創作</span><span>影音報導</span></p>
                                     <p class="post-tile-date">2020.02.01</p>
                                 </div>
                             </li>
@@ -341,40 +341,5 @@
         </div>
     </footer>
 </body>
-
-<script>
-    const collapseMenu = {
-        viewport: document.documentElement.clientWidth,
-        btn: document.querySelector('.nav-btn'),
-        menu: document.querySelector('#collapse-menu'),
-        ifOpen: false,
-    }
-
-    // console.log(collapseMenu.viewport)
-
-    if (collapseMenu.viewport <= 768) {
-        collapseMenu.btn.addEventListener('click', toggleMenu);
-    }
-
-    function toggleMenu() {
-        // console.log(collapseMenu.ifOpen)
-        collapseMenu.ifOpen = !collapseMenu.ifOpen;
-        if (collapseMenu.ifOpen) {
-            collapseMenu.menu.classList.add('show');
-        } else { collapseMenu.menu.classList.remove('show') }
-    }
-
-
-    /* 這部分在想可能不會用到，正式上線後，相關專案的部分理當是不會比報導本文還要高... */
-    //計算主要欄位的高度[0] - ( 藝術家介紹[1] + 相關專案 [2]) => 控制相關專案的高度，動態呈現 overflow 的效果
-    // const twoColEle = [
-    //     document.querySelector('.report-body').offsetHeight,
-    //     document.querySelector('.artist').offsetHeight,
-    //     document.querySelector('.related-projects h5').offsetHeight
-    // ];
-    // document.querySelector('.related-projects-body').style.height 
-    // = `${twoColEle[0] - (twoColEle[1] + twoColEle[2])}px`;
-
-</script>
 
 </html>
